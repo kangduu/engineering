@@ -1,5 +1,3 @@
-# webpack
-
 > 注意，webpack 不会更改代码中除 `import` 和 `export` 语句以外的部分。如果正在使用其它 [ES2015 特性](http://es6-features.org/)，请确保 webpack 的 loader 系统 中使用了像 Babel 一样的 [转译器](https://webpack.docschina.org/loaders/#transpiling)。
 
 > 安装一个将被打包到`生产环境` bundle 的包时，应该使用 `npm install --save`；而安装一个用于`开发环境`的包时（例如代码检查工具、测试库等），应该使用 `npm install --save-dev`。
@@ -7,6 +5,8 @@
 > webpack 最出色的功能之一就是除了引入 JavaScript，还可以通过 loader 或内置的 [资源模块](https://webpack.docschina.org/guides/asset-modules/) 引入任何其他类型的文件。
 
 > 不要使用 webpack 编译不可信的代码。它可能会在计算机，远程服务器或者在 web 应用程序使用者的浏览器中执行恶意代码。
+
+# 管理资源
 
 ## 处理 CSS
 
@@ -135,3 +135,35 @@ module.exports = {
 > 在使用 d3 等工具实现某些数据可视化时，这个功能极其有用。这将帮助不用在运行时发送请求获取和解析数据，而是在构建过程中将其提前加载到模块中，以便浏览器加载模块后，可以直接访问解析过的数据。
 
 ### [自定义 JSON 模块解析器](https://webpack.docschina.org/guides/asset-management/#customize-parser-of-json-modules)
+
+# 管理输出
+
+## [HtmlWebpackPlugin](https://github.com/jantimon/html-webpack-plugin)
+
+```js
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+
+module.exports = {
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: "webpack output management",
+    }),
+  ],
+};
+```
+
+## 清理 dist 文件夹
+
+```js{5}
+module.exports = {
+  output: {
+    filename: "[name].bundle.js",
+    path: path.resolve(__dirname, "dist"),
+    clean: true, // 清理dist文件
+  },
+};
+```
+
+## manifest 拓展阅读
+
+关于 [WebpackManifestPlugin](https://github.com/shellscape/webpack-manifest-plugin) 如何处理 webpack 的 manifest 数据
