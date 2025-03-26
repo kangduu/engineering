@@ -1,0 +1,12 @@
+@font-face {
+  font-family: "MyFont";
+  src: url("./tet.ttf");
+  /* url("./6729c027c4aa7isrkyeufo7872.ttf")  , */
+}
+
+.hello {
+  color: red;
+  font-family: "MyFont";
+  /* background-image: url("./developer.jpg"); */
+  background-repeat: no-repeat;
+}

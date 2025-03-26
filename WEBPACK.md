@@ -69,3 +69,69 @@ module.exports = {
 ```
 
 ## 加载数据（json、csv、tsc、xml、...）
+
+> xml-loader csv-loader
+
+> JSON 数据内置支持，不需要额外的 loader
+
+```js
+module.exports = {
+  module: {
+    rules: [
+      {
+        test: /\.(csv|tsv)$/i,
+        use: ["csv-loader"],
+      },
+      {
+        test: /\.xml$/i,
+        use: ["xml-loader"],
+      },
+    ],
+  },
+};
+```
+
+```js
+// csv 数据格式
+[
+  ["id", "name", "age", "city"],
+  ["1", "John Doe", "28", "New York"],
+  ["2", "Jane Smith", "34", "Los Angeles"],
+  ["3", "Michael Brown", "22", "Chicago"],
+]
+
+// xml 数据格式
+{
+    "catalog": {
+        "book": [
+            {
+                "$": {
+                    "id": "bk101"
+                },
+                "author": [
+                    "Gambardella, Matthew"
+                ],
+                "title": [
+                    "XML Developer's Guide"
+                ],
+                "genre": [
+                    "Computer"
+                ],
+                "price": [
+                    "44.95"
+                ],
+                "publish_date": [
+                    "2000-10-01"
+                ],
+                "description": [
+                    "An in-depth look at creating applications with XML."
+                ]
+            },
+        ]
+    }
+}
+```
+
+> 在使用 d3 等工具实现某些数据可视化时，这个功能极其有用。这将帮助不用在运行时发送请求获取和解析数据，而是在构建过程中将其提前加载到模块中，以便浏览器加载模块后，可以直接访问解析过的数据。
+
+### [自定义 JSON 模块解析器](https://webpack.docschina.org/guides/asset-management/#customize-parser-of-json-modules)
