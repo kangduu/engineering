@@ -167,3 +167,19 @@ module.exports = {
 ## manifest 拓展阅读
 
 关于 [WebpackManifestPlugin](https://github.com/shellscape/webpack-manifest-plugin) 如何处理 webpack 的 manifest 数据
+
+# 开发环境
+
+## Source Map
+
+❓ 为什么需要 source map
+
+> 当 webpack 打包源代码时，可能会很难追踪到错误和警告在源代码中的原始位置。例如，如果将三个源文件（a.js，b.js 和 c.js）打包到一个 bundle（bundle.js）中，而其中一个源文件包含错误，那么堆栈跟踪就会直接指向到 bundle.js，却无法准确知道错误来自于哪个源文件，所以这种提示通常无法提供太多帮助。
+
+```js
+module.exports = {
+  devtool: "inline-source-map", // more config https://webpack.docschina.org/configuration/devtool/
+};
+```
+
+## 开发工具
