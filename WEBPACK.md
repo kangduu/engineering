@@ -318,3 +318,7 @@ module.exports = {
 ```
 
 > v5.98.0 版本，重复执行 `npm run build`，未修改的内容，会使用缓存：`assets by status 1.4 MiB [cached] 2 assets`
+
+# Future
+
+- [Authoring Libraries](https://webpack.js.org/guides/author-libraries/)
