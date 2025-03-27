@@ -183,3 +183,17 @@ module.exports = {
 ```
 
 ## 开发工具
+
+### 观察模式 --watch
+
+虽然可以监听文件的变化，但是不能自动刷新浏览器
+
+### [webpack-dev-server](https://webpack.docschina.org/guides/development/#using-webpack-dev-server)
+
+本地服务，将 bundle 写进内存，会刷新整页面[模块热替换](https://webpack.docschina.org/guides/hot-module-replacement/)。
+
+### [webpack-dev-middleware](https://webpack.docschina.org/guides/development/#using-webpack-dev-middleware)
+
+webpack-dev-middleware 是一个包装器，它可以把 webpack 处理过的文件发送到 server。
+
+🤔：这是否就可以实现服务端渲染？
