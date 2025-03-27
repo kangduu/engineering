@@ -349,3 +349,4 @@ module.exports = (env) => {
 
 - [Authoring Libraries](https://webpack.js.org/guides/author-libraries/)
 - [Build Performance](https://webpack.docschina.org/guides/build-performance/)
+- [Content Security Policies](https://webpack.docschina.org/guides/csp/)
