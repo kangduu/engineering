@@ -319,6 +319,32 @@ module.exports = {
 
 > v5.98.0 版本，重复执行 `npm run build`，未修改的内容，会使用缓存：`assets by status 1.4 MiB [cached] 2 assets`
 
+# 环境变量
+
+作用：消除 webpack.config.js 在 开发环境 和 生产环境 之间的差异
+
+```shell
+npx webpack --env goal=local --env production --progress
+```
+
+```js
+const path = require("path");
+
+module.exports = (env) => {
+  // Use env.<YOUR VARIABLE> here:
+  console.log("Goal: ", env.goal); // 'local'
+  console.log("Production: ", env.production); // true
+
+  return {
+    entry: "./src/index.js",
+    output: {
+      filename: "bundle.js",
+      path: path.resolve(__dirname, "dist"),
+    },
+  };
+};
+```
+
 # Future
 
 - [Authoring Libraries](https://webpack.js.org/guides/author-libraries/)
