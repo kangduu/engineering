@@ -348,3 +348,4 @@ module.exports = (env) => {
 # Future
 
 - [Authoring Libraries](https://webpack.js.org/guides/author-libraries/)
+- [Build Performance](https://webpack.docschina.org/guides/build-performance/)
