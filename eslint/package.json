@@ -1,0 +1,25 @@
+{
+  "name": "eslint",
+  "version": "1.0.0",
+  "description": "study eslint",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "eslint"
+  ],
+  "author": "kangduu",
+  "license": "ISC",
+  "devDependencies": {
+    "@eslint/css": "^0.10.0",
+    "@eslint/js": "^9.33.0",
+    "@eslint/json": "^0.13.1",
+    "@eslint/markdown": "^7.1.0",
+    "eslint": "^9.33.0",
+    "eslint-plugin-react": "^7.37.5",
+    "globals": "^16.3.0",
+    "jiti": "^2.5.1",
+    "typescript-eslint": "^8.40.0"
+  }
+}
